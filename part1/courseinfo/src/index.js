@@ -32,46 +32,29 @@ const Total = (props) => (
 )
 
 const App = () => {
+  
   const course = 'Half Stack application development'
-  const part1 = 'Fundamentals of React'
-  const exercises1 = 10
-  const part2 = 'Using props to pass data'
-  const exercises2 = 7
-  const part3 = 'State of a component'
-  const exercises3 = 14
 
-  //test
+  const part1 = {
+    name: 'Fundamentals of React',
+    exercise: 10
+  }
 
-  const t = [1, -1, 3]
-  t.push(5)
-  console.log(t.length)
-  console.log(t)
-  console.log(t[0])
+  const part2 = {
+    name: 'Using props to pass data',
+    exercise: 7
+  }
 
-  t.forEach(el => {
-    console.log(el)
-  })
-
-  const t2 = t.concat(5)
-  console.log(t2)
-
-  const m1 = t2.map(val => val * 2)
-  console.log(m1)
-
-  const m2 = t2.map(val => '<li>' + val + '</val')
-  console.log(m2)
-
-  const [first, second, ...rest] = m1
-  console.log(first, second)
-  console.log(rest)
-
-
+  const part3 = {
+    name: 'State of a component',
+    exercise: 14
+  }
 
   return (
     <div>
       < Header title={course} />
-      < Content part1={part1} exercises1={exercises1} part2={part2} exercises2={exercises2} part3={part3} exercises3={exercises3} />
-      < Total exercises1={exercises1} exercises2={exercises2} exercises3={exercises3} />
+      < Content part1={part1.name} exercises1={part1.exercise} part2={part2.name} exercises2={part2.exercise} part3={part3.name} exercises3={part3.exercise} />
+      < Total exercises1={part1.exercise} exercises2={part2.exercise} exercises3={part3.exercise} />
     </div>
   )
 }
